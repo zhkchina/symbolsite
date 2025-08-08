@@ -1,11 +1,19 @@
-import Image from "next/image";
+import SymbolCard from '@/components/SymbolCard';
 
-export default function Home() {
+export default function Page() {
   return (
-    <main className="min-h-screen bg-white text-gray-800 p-10">
-      <h1 className="text-4xl font-bold mb-6">CoolSymbol</h1>
-      <h2 className="text-pink-500 underline text-xl">测试 Tailwind 样式</h2>
-      <p className="text-lg">一个符号和字体样式复制工具的空壳站点。</p>
-    </main>
+    <>
+      <section className="mb-4">
+        <h2 className="text-base font-medium">常用符号（点击卡片复制）</h2>
+        <p className="mt-1 text-sm text-gray-600">
+          本页收录星号、爱心等常用符号。点击任意卡片即可复制到剪贴板。
+        </p>
+      </section>
+
+      <section aria-label="符号列表" className="flex flex-wrap gap-4">
+        <SymbolCard char="★" name="黑色星号" unicode="U+2605" />
+        <SymbolCard char="♡" name="空心爱心" unicode="U+2661" />
+      </section>
+    </>
   );
 }
