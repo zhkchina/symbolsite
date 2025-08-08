@@ -5,11 +5,12 @@ import { useState } from 'react';
 interface SymbolCardProps {
   char: string;      // ★
   name: string;      // 黑色星号
-  unicode: string;   // U+2605
 }
 
-export default function SymbolCard({ char, name, unicode }: SymbolCardProps) {
+export default function SymbolCard({ char, name }: SymbolCardProps) {
   const [copied, setCopied] = useState(false);
+
+
 
   const handleCopy = async () => {
     try {
@@ -29,7 +30,6 @@ export default function SymbolCard({ char, name, unicode }: SymbolCardProps) {
       <span className="text-5xl sm:text-6xl">{char}</span>
 
       <div className="mt-2 text-lg font-medium">{name}</div>
-      <div className="text-sm text-gray-600">{unicode}</div>
 
       {copied && (
         <div className="mt-2 rounded bg-green-100 py-1 text-sm text-green-700">

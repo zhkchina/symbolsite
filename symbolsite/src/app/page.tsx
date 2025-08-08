@@ -1,4 +1,5 @@
 import SymbolCard from '@/components/SymbolCard';
+import { symbols } from '@/symbols';
 
 export default function Page() {
   return (
@@ -11,8 +12,9 @@ export default function Page() {
       </section>
 
       <section aria-label="符号列表" className="flex flex-wrap gap-4">
-        <SymbolCard char="★" name="黑色星号" unicode="U+2605" />
-        <SymbolCard char="♡" name="空心爱心" unicode="U+2661" />
+        {symbols.map((s) => (
+          <SymbolCard key={s.char} {...s} />
+        ))}
       </section>
     </>
   );
