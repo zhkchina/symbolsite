@@ -11,7 +11,8 @@ export default function Page() {
         </p>
       </section>
 
-      <section aria-label="符号列表" className="flex flex-wrap gap-4">
+      <section aria-label="符号列表" className="grid gap-2 sm:gap-3 md:gap-4"
+        style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(64px, 1fr))' }}>
         {symbols.map((s) => (
           <SymbolCard key={s.char} {...s} />
         ))}

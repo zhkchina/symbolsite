@@ -22,15 +22,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="zh-CN">
       <body className="antialiased">
         <header className="border-b">
-          <div className="mx-auto max-w-5xl px-4 py-3">
+          <div className="mx-auto max-w-screen-xl px-4 py-3">
             <h1 className="text-lg font-medium">SymbolSite</h1>
           </div>
         </header>
 
-        <main className="mx-auto max-w-5xl px-4 py-6">{children}</main>
+        <main className="mx-auto max-w-screen-xl px-4 py-6">{children}</main>
 
         <footer className="border-t">
-          <div className="mx-auto max-w-5xl px-4 py-3 text-sm text-gray-500">
+          <div className="mx-auto max-w-screen-xl px-4 py-3 text-sm text-gray-500">
             © {new Date().getFullYear()} SymbolSite
           </div>
         </footer>

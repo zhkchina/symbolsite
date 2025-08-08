@@ -25,14 +25,20 @@ export default function SymbolCard({ char, name }: SymbolCardProps) {
   return (
     <button
       onClick={handleCopy}
-      className="w-full sm:w-60 rounded-lg border p-4 text-center
-                 transition hover:bg-gray-50 active:scale-95">
-      <span className="text-5xl sm:text-6xl">{char}</span>
+      className="relative w-full aspect-square overflow-hidden rounded-lg border text-center transition hover:bg-gray-50 active:scale-95"
+    >
+      {/* 中间居中显示符号 */}
+      <div className="absolute inset-x-0 top-0 bottom-5 flex items-center justify-center">
+        <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">{char}</span>
+      </div>
 
-      <div className="mt-2 text-lg font-medium">{name}</div>
+      {/* 底部固定一行显示名称（不省略号，缩小字体） */}
+      <div className="absolute bottom-1 left-1 right-1 text-[10px] sm:text-[11px] md:text-xs leading-tight whitespace-nowrap overflow-hidden text-clip">
+        {name}
+      </div>
 
       {copied && (
-        <div className="mt-2 rounded bg-green-100 py-1 text-sm text-green-700">
+        <div className="absolute inset-x-2 bottom-6 rounded bg-green-100 py-1 text-sm text-green-700">
           已复制!
         </div>
       )}
