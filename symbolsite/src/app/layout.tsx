@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -36,11 +37,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN">
-      <body className="antialiased">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <header className="border-b" role="banner">
           <div className="mx-auto max-w-screen-xl px-4 py-3">
             <div className="text-lg font-medium">
-              <a href="/" aria-label="SymbolSite 首页">SymbolSite</a>
+              <Link href="/" aria-label="SymbolSite 首页">SymbolSite</Link>
             </div>
           </div>
         </header>
