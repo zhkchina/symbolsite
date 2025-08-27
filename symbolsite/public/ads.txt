@@ -1,0 +1,5 @@
+# ads.txt for Google AdSense
+# 将 pub-REPLACE_WITH_YOUR_PUBLISHER_ID 替换为你的发布商 Publisher ID（仅数字），例如 pub-1234567890123456
+# 更多授权售卖方可按需追加行；参考：https://support.google.com/adsense/answer/7532444
+
+google.com, pub-8518072751016054, DIRECT, f08c47fec0942fa0
